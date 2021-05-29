@@ -1,0 +1,50 @@
+/* Links */
+
+
+a {
+    input[type='submit'] {
+      color: $link-primary;
+    }
+    &:visited {
+      input[type='submit'] {
+        color: $link-primary;
+      };
+    }
+  }
+  
+  
+  a {
+    &:hover { color: $link-secondary }
+    &:active { color: $link-secondary }
+  }
+  
+  /* Form elements */
+  input[type='submit'] {
+    color: $link-primary;
+  }
+  
+  input[type='submit']:hover,
+  ul.buttons a:hover {
+    color: $link-secondary;
+  }
+  
+  
+  /* Buttons */
+  
+  button,
+  a.button,
+  .button {
+    border: 1px solid $color-2;
+    font-weight: bold;
+    font-size: 13px;
+    color: $color-1;
+    text-align: center;
+    width: 11.8em;
+    height: 2em;
+  
+    &:hover {
+      background-color: $color-1;
+      color: white;
+      font-weight: normal;
+    }
+  }
