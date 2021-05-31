@@ -1,7 +1,7 @@
 
 <template>
   <div id="Ff">
-    <ejs-grid :dataSource="data">
+    <ejs-grid :dataSource="data" :allowPaging="true" :allowSorting="true" :allowFiltering="true" :pageSettings=pageSettings>
       <e-columns>
         <e-column field='OrderID' headerText='Order ID' width=90></e-column>
         <e-column field='CustomerID' headerText='Customer ID' width=120></e-column>
@@ -14,7 +14,7 @@
 
 <script>
 import Vue from 'vue'
-import { GridPlugin } from '@syncfusion/ej2-vue-grids'
+import { GridPlugin, Page, Sort, Filter } from '@syncfusion/ej2-vue-grids'
 
 Vue.use(GridPlugin)
 
@@ -31,8 +31,12 @@ export default {
         { OrderID: 10254, CustomerID: 'CHOPS', Freight: 22.98 },
         { OrderID: 10255, CustomerID: 'RICSU', Freight: 148.33 },
         { OrderID: 10256, CustomerID: 'WELLI', Freight: 13.97 }
-      ]
+      ],
+      pageSettings: { pageSize: 5 }
     }
+  },
+  provide: {
+    grid: [Page, Sort, Filter]
   }
 }
 </script>
